@@ -1,16 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbach <cbach@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 12:20:26 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/17 12:20:26 by cbach            ###   ########.fr       */
+/*   Created: 2020/05/17 15:43:19 by cbach             #+#    #+#             */
+/*   Updated: 2020/05/17 15:43:19 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+#include "libft.h"
+
+size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	return (c > 64 && c < 91 || c > 96 && c < 123? 1 : 0);
+	size_t c;
+
+	if (!dst || !src || !size)
+		return (0);
+	c = 0;
+	while (*src && ++c < size)
+		*dst++ = *src++;
+	while(*src++)
+		c++;
+	return (--c);
 }

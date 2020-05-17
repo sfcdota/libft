@@ -14,23 +14,21 @@
 
 int		ft_atoi(const char *nptr)
 {
-	int i;
-	char *begin;
+	long long int i;
 	int multiplier;
 
+	i = 0;
 	if(nptr != NULL)
 	{
 		multiplier = 1;
-		begin = nptr;
-		i = 0;
-		while (*begin > 7 && *begin < 14 || *begin == 32)
-			begin++;
-		if (*begin++ = 45)
+		while ((*nptr > 7 && *nptr < 14) || *nptr == 32)
+			nptr++;
+		if (*nptr++ == 45)
 			multiplier *= -1;
-		while (ft_isdigit(*begin))
+		while (ft_isdigit(*nptr))
 		{
-			i = i * 10 + *begin++;
+			i = i * 10 + *nptr++;
 		}
-		return (i * multiplier);
 	}
+	return (i * multiplier);
 }
