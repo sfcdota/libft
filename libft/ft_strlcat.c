@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 16:24:09 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/17 16:24:09 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/18 00:34:32 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,15 @@
 
 size_t		strlcat(char *dst, const char *src, size_t size)
 {
+	size_t i;
 
+	i = 0;
+	while (i < size && *dst++)
+		i++;
+	while (i++ < size)
+		*dst++ = *src++;
+	*dst = '\0';
+	while (*src++)
+		i++;
+	return (i);
 }
