@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbach <cbach@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 02:06:28 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/17 02:06:28 by cbach            ###   ########.fr       */
+/*   Created: 2020/05/17 02:06:30 by cbach             #+#    #+#             */
+/*   Updated: 2020/05/17 02:06:30 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef LIBFT_H
+# define LIBFT_H
 
-#include "libft.h"
+#include <stddef.h>
 
-void	*ft_memset(void *s, int c, size_t n)
-{
-	int i;
-	void *temp;
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 
-	temp = s;
-	i = 0;
-	while (i++ < n)
-		(unsigned char)*s++ = (unsigned char)c;
-	return (temp);
-}
+#endif
