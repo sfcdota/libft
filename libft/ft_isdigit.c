@@ -12,5 +12,5 @@
 
 int		ft_isdigit(int c)
 {
-	return (c > 47 && c < 59? 1 : 0);
+	return (c > 47 && c < 58? 1 : 0);
 }
