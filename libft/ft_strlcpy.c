@@ -16,12 +16,17 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t c;
 
-	if (!dst || !src || !size)
-		return (0);
 	c = 0;
-	while (*src && ++c < size)
-		*dst++ = *src++;
+	if (size)
+	{
+		while (*src && c < size - 1)
+		{
+			*dst++ = *src++;
+			c++;
+		}
+		*dst = '\0';
+	}
 	while(*src++)
 		c++;
-	return (--c);
+	return (c);
 }

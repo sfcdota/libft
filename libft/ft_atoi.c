@@ -18,16 +18,20 @@ int		ft_atoi(const char *nptr)
 	int multiplier;
 
 	i = 0;
+	multiplier = 1;
 	if(nptr != NULL)
 	{
-		multiplier = 1;
 		while ((*nptr > 7 && *nptr < 14) || *nptr == 32)
 			nptr++;
-		if (*nptr++ == 45)
-			multiplier *= -1;
+		if (*nptr == 45 || *nptr == 43)
+		{
+			if(*nptr == 45)
+				multiplier *= -1;
+			nptr++;
+		}
 		while (ft_isdigit(*nptr))
 		{
-			i = i * 10 + *nptr++;
+			i = i * 10 + (*nptr++ - 48);
 		}
 	}
 	return (i * multiplier);

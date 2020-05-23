@@ -10,29 +10,19 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-
-OBJECTS = *.o
 FLAGS = -Wall -Wextra -Werror
 
-.PHONY: all clean fclean re
+all: test
 
-all: $(NAME)
-$(NAME): compile
-	ar -rcs $(NAME) *.o
-	ranlib $(NAME)
-compile:
-	gcc $(FLAGS) -c *.c
-clean:
-	@rm -f *.o
-fclean: clean
-	@rm -f $(NAME)
+test: libbuild compilerun clear
 
-test: all do_test fclean
-do_test:
-	mv libft.a ../tests
-	gcc $(FLAGS) ../tests/$(NAME) ../main.c -o ../tests/libft_test.out
-	../tests/libft_test.out
-rm_test:
-	rm -f ../tests/libft_test.out ../tests/libft.a
-re: fclean all
+libbuild:
+	gcc $(FLAGS) -c ../libft/*.c
+	ar -rcs libft.a *.o
+	ranlib libft.a
+	rm *.o
+compilerun:
+	gcc $(FLAGS) main.c -L. -lft -o f
+	./f
+clear:
+	rm f libft.a
