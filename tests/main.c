@@ -3,82 +3,82 @@
 #include <stdlib.h>
 #include <bsd/string.h>
 #include "libft.h"
-
-size_t	strlcpy(char *dst, const char *src, size_t siz)
+#include <unistd.h>
+char	mapi(unsigned int i, char c)
 {
-	char *d = dst;
-	const char *s = src;
-	size_t n = siz;
+	static int indexArray[11] = {0};
 
-	/* Copy as many bytes as will fit */
-	if (n != 0) {
-		while (--n != 0) {
-			if ((*d++ = *s++) == '\0')
-				break;
-		}
+	if (i > 10 || indexArray[i] == 1)
+		write(1, "wrong index\n", 12);
+	else
+		indexArray[i] = 1;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	else if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
+}
+
+int		is_in_set(char c, char const *set)
+{
+	while(set && *set)
+	{
+		printf("%d char\t %d set char\n", (unsigned char )c, (unsigned char )*set);
+		if (c == *set++)
+			return (1);
 	}
+	return (0);
+}
 
-	/* Not enough room in dst, add NUL and traverse rest of src */
-	if (n == 0) {
-		if (siz != 0)
-			*d = '\0';		/* NUL-terminate dst */
-		while (*s++)
-			;
+int		begin(char const *s1, char const *set)
+{
+	int i;
+
+	i = 0;
+	while (is_in_set(*s1, set) && *s1++)
+		i++;
+	return(i);
+}
+
+int		end(char const *s1, char const *set, int strlen)
+{
+	int i;
+
+	i = 0;
+	printf("%c is in set? asnwer : %d\n", *(s1 + strlen - i - 1), is_in_set(*(s1 + strlen - i), set));
+	while(is_in_set(*(s1 + strlen - i - 1), set))
+		i++;
+	printf("%d - initial lentght\t %d - end length\n", strlen, strlen - i);
+	return (strlen - i);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char *s;
+	int b;
+	int e;
+	char *t;
+
+	b = begin(s1, set);
+	e = end(s1, set, ft_strlen(s1));
+	s = s1? malloc(e - b + 1) : NULL;
+	if (s)
+	{
+		t = s;
+		while (*(s1 + b) && b < e)
+			*t++=*(s1 + b++);
+		*t = '\0';
 	}
-
-	return(s - src - 1);	/* count does not include NUL */
+	return (s);
 }
-
-size_t	strlcat(char *dst, const char *src, size_t dsize)
-{
-	const char *odst = dst;
-	const char *osrc = src;
-	size_t n = dsize;
-	size_t dlen;
-
-	/* Find the end of dst and adjust bytes left but don't go past end. */
-	while (n-- != 0 && *dst != '\0')
-		dst++;
-	dlen = dst - odst;
-	n = dsize - dlen;
-
-	if (n-- == 0)
-		return(dlen + strlen(src));
-	while (*src != '\0') {
-		if (n != 0) {
-			*dst++ = *src;
-			n--;
-		}
-		src++;
-	}
-	*dst = '\0';
-
-	return(dlen + (src - osrc));	/* count does not include NUL */
-}
-
-void ft_strlcat_test1()
-{
-	char *dst1 = "malloc(20)";
-	char *dst2 = "malloc(20)";
-	char *src = "privet poka";
-	size_t t = 5;
-	if (ft_strlcat(dst1, src, t) == strlcat(dst2, src, t) && strcmp(dst1, dst2) == 0)
-		printf("correct test with %s %li\n", src, t);
-}
-
-void ft_strlcat_test()
-{
-	ft_strlcat_test1();
-}
-
-
 
 
 int main()
 {
-	printf("%c\n", *(unsigned char *)"\200");
-	printf("%d\n", ft_strncmp("\202", "\0", 6));
-	printf("\48\n, %d\n", '\177'-'\0');
+	char s1[] = "lorem ipsum dolor sit amet \n \t ";
+	char	set [] = "\t \n";
+	printf("%s\n", ft_strtrim(s1, set));
 	return (0);
 }
 
