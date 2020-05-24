@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbach <cbach@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 22:16:16 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/23 22:29:13 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/24 17:45:37 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char *c;
 	char *t;
 
-	c = s1 || s2? malloc(ft_strlen(s1) + ft_strlen(s2) + 1) : NULL;
+	c = s1 || s2 ? malloc(ft_strlen(s1) + ft_strlen(s2) + 1) : NULL;
 	if (c)
 	{
 		t = c;
-		while(s1 && *s1)
-			*t++=*s1++;
-		while(s2 && *s2)
-			*t++=*s2++;
+		while (s1 && *s1)
+			*t++ = *s1++;
+		while (s2 && *s2)
+			*t++ = *s2++;
 		t = '\0';
 	}
 	return (c);

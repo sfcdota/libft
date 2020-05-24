@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbach <cbach@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 15:43:19 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/17 15:43:19 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/24 17:40:34 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 		}
 		*dst = '\0';
 	}
-	while(*src++)
+	while (*src++)
 		c++;
 	return (c);
 }

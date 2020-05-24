@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbach <cbach@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 12:21:50 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/17 12:21:50 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/24 17:45:54 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t		ft_strlen(const char *s)
 
 	i = 0;
 	if (s)
-	while(*s++)
-		i++;
+		while (*s++)
+			i++;
 	return (i);
 }

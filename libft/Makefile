@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cbach <cbach@student.21-school.ru>         +#+  +:+       +#+         #
+#    By: cbach <cbach@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/17 15:43:49 by cbach             #+#    #+#              #
-#    Updated: 2020/05/17 15:43:49 by cbach            ###   ########.fr        #
+#    Updated: 2020/05/24 17:35:20 by cbach            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 
+
 test: all do_test fclean
 do_test:
 	mv libft.a ../tests
@@ -36,3 +37,4 @@ do_test:
 rm_test:
 	rm -f ../tests/libft_test.out ../tests/libft.a
 re: fclean all
+

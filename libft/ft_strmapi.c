@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbach <cbach@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 21:31:32 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/23 22:15:30 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/24 17:41:06 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *t;
-	char *a;
-	unsigned int i;
+	char			*t;
+	char			*a;
+	unsigned int	i;
 
 	i = 0;
 	t = s ? malloc(ft_strlen(s) + 1) : NULL;

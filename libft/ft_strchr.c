@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbach <cbach@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 13:48:30 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/17 13:48:30 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/24 17:39:59 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-
 	while (*s && *s != c)
 	{
 		s++;
 	}
-	return (*s == c? (char *)s : NULL);
+	return (*s == c ? (char *)s : NULL);
 }

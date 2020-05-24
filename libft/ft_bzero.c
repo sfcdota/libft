@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbach <cbach@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 02:06:17 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/17 02:06:17 by cbach            ###   ########.fr       */
+/*   Created: 2020/05/24 17:16:26 by cbach             #+#    #+#             */
+/*   Updated: 2020/05/24 17:35:44 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-	unsigned char *t;
+	size_t			i;
+	unsigned char	*t;
 
 	t = s;
 	i = 0;

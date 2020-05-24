@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbach <cbach@student.21-school.ru>         +#+  +:+       +#+        */
+/*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 19:57:24 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/23 23:43:12 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/24 17:37:01 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int		i_length(int n)
 {
 	int i;
 
-	i = n < 0? 2 : 1;
-	while (n/10)
+	i = n < 0 ? 2 : 1;
+	while (n / 10)
 	{
 		i++;
 		n /= 10;
@@ -28,8 +28,8 @@ int		i_length(int n)
 
 int		digit(int n)
 {
-	while (n/10)
-		n/=10;
+	while (n / 10)
+		n /= 10;
 	return (n);
 }
 
