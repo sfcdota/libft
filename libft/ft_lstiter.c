@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 16:24:09 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/25 20:02:33 by cbach            ###   ########.fr       */
+/*   Created: 2020/05/25 22:52:07 by cbach             #+#    #+#             */
+/*   Updated: 2020/05/26 00:30:06 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t i;
-
-	i = 0;
-	while (i < size && *dst)
+	while (lst)
 	{
-		i++;
-		dst++;
+		if (f)
+			f(lst->content);
+		lst = lst->next;
 	}
-	if (i < size)
-	{
-		while (i < size - 1 && *src)
-		{
-			*dst++ = *src++;
-			i++;
-		}
-		*dst = '\0';
-	}
-	while (*src++)
-		i++;
-	return (i);
 }

@@ -6,18 +6,18 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 19:57:24 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/24 17:37:01 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/25 21:22:06 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int		i_length(int n)
+static int		i_length(int n)
 {
 	int i;
 
-	i = n < 0 ? 2 : 1;
+	i = 1;
 	while (n / 10)
 	{
 		i++;
@@ -26,35 +26,28 @@ int		i_length(int n)
 	return (i);
 }
 
-int		digit(int n)
-{
-	while (n / 10)
-		n /= 10;
-	return (n);
-}
-
 char	*ft_itoa(int n)
 {
-	char *a;
-	char *t;
-	int l;
-	long int new_n;
+	char		*a;
+	char		*t;
+	int			l;
+	long int	new_n;
 
 	l = i_length(n);
-	a = malloc(l + 1);
-	new_n = n;
+	a = malloc(l + 1 + (n < 0 ? 1 : 0));
 	if (a)
 	{
+		new_n = n;
 		t = a;
+		*(t + l) = '\0';
 		if(new_n < 0)
 		{
 			*t++ = '-';
 			new_n *= -1;
 		}
-		*t = '\0';
-		while (l)
+		while (l--)
 		{
-			*(t + l--) = new_n % 10 + 48;
+			*(t + l) = new_n % 10 + 48;
 			new_n /= 10;
 		}
 	}

@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 16:24:09 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/25 20:02:33 by cbach            ###   ########.fr       */
+/*   Created: 2020/05/25 21:44:41 by cbach             #+#    #+#             */
+/*   Updated: 2020/05/26 01:11:02 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+void ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t i;
+	t_list *s;
 
-	i = 0;
-	while (i < size && *dst)
+	if (lst && new)
 	{
-		i++;
-		dst++;
-	}
-	if (i < size)
-	{
-		while (i < size - 1 && *src)
+		new->next = NULL;
+		if (!*lst)
+			*lst = new;
+		else
 		{
-			*dst++ = *src++;
-			i++;
+			s = *lst;
+			while (s->next)
+				s = s->next;
+			s->next = new;
 		}
-		*dst = '\0';
 	}
-	while (*src++)
-		i++;
-	return (i);
 }

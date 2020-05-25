@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 16:24:09 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/25 20:02:33 by cbach            ###   ########.fr       */
+/*   Created: 2020/05/25 22:22:52 by cbach             #+#    #+#             */
+/*   Updated: 2020/05/26 01:04:00 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+void ft_lstdelone(t_list *lst, void (*del)(void
+*))
 {
-	size_t i;
-
-	i = 0;
-	while (i < size && *dst)
+	if (lst)
 	{
-		i++;
-		dst++;
+		if (del)
+			del(lst->content);
+		free(lst);
 	}
-	if (i < size)
-	{
-		while (i < size - 1 && *src)
-		{
-			*dst++ = *src++;
-			i++;
-		}
-		*dst = '\0';
-	}
-	while (*src++)
-		i++;
-	return (i);
 }

@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 16:24:09 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/25 20:02:33 by cbach            ###   ########.fr       */
+/*   Created: 2020/05/25 23:00:48 by cbach             #+#    #+#             */
+/*   Updated: 2020/05/26 00:42:03 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
+void (*del)(void *))
 {
-	size_t i;
+	t_list *n;
+	t_list *first;
 
-	i = 0;
-	while (i < size && *dst)
+	if (lst)
 	{
-		i++;
-		dst++;
-	}
-	if (i < size)
-	{
-		while (i < size - 1 && *src)
+		first = ft_lstnew(f(lst->content));
+		if (first)
 		{
-			*dst++ = *src++;
-			i++;
+			n = first;
+			while(lst->next)
+			{
+				lst = lst->next;
+				n->next = ft_lstnew(f(lst->content));
+				if(!n->next)
+				{
+					ft_lstclear(&n, del);
+					return (NULL);
+				}
+				n = n->next;
+			}
 		}
-		*dst = '\0';
+		return (first);
 	}
-	while (*src++)
-		i++;
-	return (i);
+	return (NULL);
 }

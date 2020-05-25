@@ -6,14 +6,14 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 22:29:54 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/24 17:46:20 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/25 19:43:13 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int		is_in_set(char c, char const *set)
+static int		is_in_set(char c, char const *set)
 {
 	while (set && *set)
 		if (c == *set++)
@@ -21,7 +21,7 @@ int		is_in_set(char c, char const *set)
 	return (0);
 }
 
-int		begin(char const *s1, char const *set)
+static int		begin(char const *s1, char const *set)
 {
 	int i;
 
@@ -31,7 +31,7 @@ int		begin(char const *s1, char const *set)
 	return (i);
 }
 
-int		end(char const *s1, char const *set, int strlen)
+static int		end(char const *s1, char const *set, int strlen)
 {
 	int i;
 
@@ -50,7 +50,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	b = begin(s1, set);
 	e = end(s1, set, ft_strlen(s1));
-	s = s1 ? malloc(e - b > 0 + 1) : NULL;
+	s = s1 && e - b > 0? malloc(e - b + 1) : NULL;
 	if (s)
 	{
 		t = s;

@@ -76,9 +76,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int main()
 {
-	char s1[] = "lorem ipsum dolor sit amet \n \t ";
-	char	set [] = "\t \n";
-	printf("%s\n", ft_strtrim(s1, set));
+	// char s1[] = "lorem ipsum dolor sit amet \n \t ";
+	// char	set [] = "\t \n";
+	// printf("%s\n", ft_strtrim(s1, set));
+	printf("%s\n", ft_itoa(-9));
 	return (0);
 }
 
