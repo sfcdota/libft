@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 18:11:56 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/26 23:52:37 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/27 00:00:54 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	char *s;
-	char *d;
+	unsigned char *s;
+	unsigned char *d;
 
 
 		s = (unsigned char *)src;
