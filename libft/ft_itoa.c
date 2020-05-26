@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 19:57:24 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/25 21:22:06 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/27 00:17:48 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ char	*ft_itoa(int n)
 	int			l;
 	long int	new_n;
 
-	l = i_length(n);
-	a = malloc(l + 1 + (n < 0 ? 1 : 0));
+	l = i_length(n) + (n < 0 ? 1 : 0);
+	a = malloc(l + 1);
 	if (a)
 	{
 		new_n = n;
