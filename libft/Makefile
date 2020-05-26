@@ -6,14 +6,14 @@
 #    By: cbach <cbach@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/17 15:43:49 by cbach             #+#    #+#              #
-#    Updated: 2020/05/26 01:36:34 by cbach            ###   ########.fr        #
+#    Updated: 2020/05/26 21:01:23 by cbach            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	libft.a
 NAME_SO = libft.so
 HEAD =	libft.h
-FLAGS = -Wall -Wextra -Werror
+FLAGS =
 
 SRC =						\
 		ft_atoi.c			\
@@ -70,26 +70,27 @@ OBJ_BONUS = $(patsubst %.c, %.o, $(BONUS))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $?
+	@ar -rcs $(NAME) $?
 
 bonus: $(NAME) $(OBJ_BONUS)
-	ar -rs $(NAME) $?
+	@ar -rs $(NAME) $?
 
 %.o : %.c $(HEAD)
-	gcc $(FLAGS) -c $< -o $@
+	@gcc $(FLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -f $(NAME_SO)
 
 $(BONUS):
-	ar -rcs $(NAME) $
+	@ar -rcs $(NAME) $
 re: fclean all
 
 so: $(NAME_SO)
 
 $(NAME_SO):
-	gcc -c -fPIC *.c
-	gcc -shared -o libft.so *.o
+	@gcc -c -fPIC *.c
+	@gcc -shared -o libft.so *.o

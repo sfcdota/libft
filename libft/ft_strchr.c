@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 13:48:30 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/25 19:58:16 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/26 23:48:41 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (s && *s && *s != c)
-	{
+	while (*s && *s != c)
 		s++;
-	}
-	return (s && *s == c ? (char *)s : NULL);
+	return (*s == c ? (char *)s : NULL);
 }

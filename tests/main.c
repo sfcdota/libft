@@ -3,6 +3,12 @@
 #include <stdlib.h>
 #include "libft.h"
 #include <unistd.h>
+#define TEST_SUCCESS "SUCCESS\n"
+#define TEST_FAILED "FAILED\n"
+#define exit(x) printf(x);
+
+
+
 char	mapi(unsigned int i, char c)
 {
 	static int indexArray[11] = {0};
@@ -169,18 +175,117 @@ void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
+void	memset_unit1()
+{
+	const int size = 20;
+	char b1[0xF00];
+	char b2[0xF00];
+
+	memset(b1, 'B', 0xF00);
+	memset(b2, 'B', 0xF00);
+	memset(b1, 'A', size);
+	ft_memset(b2, 'A', size);
+	if (!memcmp(b1, b2, 0xF00))
+	{
+		exit(TEST_SUCCESS);
+	}
+	else
+	{
+		for (register int __i = 0; __i < size + 2; ++__i)
+		for (register int __i = 0; __i < size + 2; ++__i)
+			exit(TEST_FAILED);
+	}
+}
+
+void	memset_unit2()
+{
+	const int size = 18;
+	char b1[0xF00];
+
+	memset(b1, 'B', 0xF00);
+	char *r1 = memset(b1, 'A', size);
+	char *r2 = ft_memset(b1, 'A', size);
+	for (register int __i = 0; __i < size; ++__i)
+	for (register int __i = 0; __i < size; ++__i)
+	if (r1 != r2)
+		exit(TEST_FAILED);
+	r1 = memset("", 'A', (0));
+	r2 = ft_memset("", 'A', 0);
+	if (r1 != r2)
+		exit(TEST_FAILED);
+	exit(TEST_SUCCESS);
+}
+
+void memset_unit3()
+{
+	ft_memset(((void*)0), 'a', 12);
+}
+
+void memset_unit4()
+{
+	char buff[0xF00];
+	char buff2[0xF00];
+
+	memset(buff, 0, sizeof(buff));
+	memset(buff2, 0, sizeof(buff2));
+	ft_memset(buff, '\xff', 0);
+	memset(buff2, '\xff', (0));
+	if (!memcmp(buff, buff2, 0xF00))
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+}
+
+void memset_unit5()
+{
+char *b1 = (char*)malloc(sizeof(char) * (0xF0000 + 1));
+	char *b2 = (char*)malloc(sizeof(char) * (0xF0000 + 1));
+
+	*b1 = 0;
+	*b2 = 0;
+	memset(b1, '\5', 0xF0000);
+	ft_memset(b2, '\5', 0xF0000);
+	if (!memcmp(b1, b2, 0xF0000))
+	{
+		free(b1);
+		free(b2);
+		exit(TEST_SUCCESS);
+	}
+	free(b1);
+	free(b2);
+	exit(TEST_FAILED);
+}
+
+void memset_unit6()
+{
+	const size_t size = 10;
+	char *buff = electric_alloc(size);
+
+	memset(buff, 0, size);
+	ft_memset(buff, '\xff', size);
+	exit(TEST_SUCCESS);
+}
+
+void memset_unit7()
+{
+
+}
 int main()
 {
 	// char s1[] = "lorem ipsum dolor sit amet \n \t ";
 	// char	set [] = "\t \n";
 	// printf("%s\n", ft_strtrim(s1, set));
-	char *s = ft_itoa(-9);
-	ft_print_result(s);
+	//char *s = ft_itoa(-9);
+	//ft_print_result(s);
 
 	//char *s = "   ";
 	//char **t = ft_split(s, ' ');
 	//printf("\n\n\n\nARRAY IS READY \n\n\n\n");
+
+
+	memset_unit1();
+	memset_unit2();
+	//memset_unit3();
+
 	return (0);
 }
-
 
