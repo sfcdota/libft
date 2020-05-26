@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 18:55:20 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/25 19:53:03 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/27 00:25:44 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,9 @@
 
 char	*ft_strdup(const char *s)
 {
-	return (s ? ft_memmove(malloc(ft_strlen(s) + 1), s, ft_strlen(s) + 1) : NULL);
+	unsigned char *t;
+	t = malloc(ft_strlen(s) + 1);
+	if (t)
+		return (ft_memmove(t, s, ft_strlen(s) + 1));
+	return (NULL);
 }
