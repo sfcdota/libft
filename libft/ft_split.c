@@ -6,72 +6,73 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 19:14:31 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/26 01:17:05 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/26 18:22:10 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static int		words_count(char const *s, char c)
-{
-	int i;
 
-	i = 0;
-	while (*s)
-		if(*s++ == c)
-			i++;
-	return (i ? i + 1 : 0);
-}
 
 static int		word_length(char const *s, char c)
 {
 	int i;
 
 	i = 0;
-	while (*s++ != c)
+	while (*s && *s != c)
+	{
 		i++;
+		s++;
+	}
 	return (i);
 }
 
 static char	*next_word(char const *s, char c)
 {
-	while (*s == c && c)
+	while (*s && *s != c)
+		s++;
+	while (*s && *s == c)
 		s++;
 	return ((char *)s);
 }
 
-static char	*copy_word(char const *s, char c, int length)
+static int		words_count(char const *s, char c)
 {
-	char *w;
+	int i;
 
-	w = malloc(length + 1);
-	if (w)
+	i = 1;
+	while (*next_word(s, c))
 	{
-		while (*s != c)
-			*w++ = *s++;
-		*w = '\0';
+		s = next_word(s, c);
+		i++;
 	}
-	return (w);
+	return (i);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**t;
 	int		words;
+	int i;
 
+	i = 0;
 	if (s)
 	{
+		s = *s == c ? next_word(s, c) : s;
 		words = words_count(s, c);
-		t = malloc(words * sizeof(char *));
+		t = malloc((words + 1) * sizeof(char *));
 		if (t)
 		{
+			t[words] = NULL;
 			while(*s)
 			{
-				*t = malloc(word_length(s, c) + 1);
-				if (!*t)
+				t[i] = malloc(word_length(s, c) + 1);
+				if (!t[i])
 					return (NULL);
-				*t++ = copy_word(s, c, word_length(s, c));
+				ft_strlcpy(t[i], s, word_length(s, c) + 1);
 				s = next_word(s, c);
+				i++;
 			}
 		}
 		return (t);

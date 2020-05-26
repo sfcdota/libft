@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 15:43:19 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/24 17:40:34 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/26 14:33:35 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t c;
 
 	c = 0;
-	if (size)
+	if (size && dst && src)
 	{
 		while (*src && c < size - 1)
 		{
@@ -26,7 +26,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 		}
 		*dst = '\0';
 	}
-	while (*src++)
+	while (src && *src++)
 		c++;
 	return (c);
 }
