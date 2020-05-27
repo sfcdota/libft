@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 19:07:26 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/27 13:41:45 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/27 14:14:08 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ char				*ft_strnstr(const char *big, const char *little, size_t len)
 
 	begin = (unsigned char *)big;
 	l = ft_strlen(little);
-	while (*begin)
+	if (!l)
+		return ((char *)big);
+	while (*begin && len)
 	{
 		while (l < len--)
 		{
@@ -27,7 +29,6 @@ char				*ft_strnstr(const char *big, const char *little, size_t len)
 				return ((char *)begin);
 			begin++;
 		}
-		return ((unsigned char *)big);
 	}
 	return (NULL);
 }
