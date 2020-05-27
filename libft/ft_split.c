@@ -6,14 +6,12 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 19:14:31 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/26 18:22:10 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/27 14:55:22 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-
-
 
 static int		word_length(char const *s, char c)
 {
@@ -28,7 +26,7 @@ static int		word_length(char const *s, char c)
 	return (i);
 }
 
-static char	*next_word(char const *s, char c)
+static char		*next_word(char const *s, char c)
 {
 	while (*s && *s != c)
 		s++;
@@ -50,11 +48,11 @@ static int		words_count(char const *s, char c)
 	return (i);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	char	**t;
 	int		words;
-	int i;
+	int		i;
 
 	i = 0;
 	if (s)
@@ -65,10 +63,9 @@ char	**ft_split(char const *s, char c)
 		if (t)
 		{
 			t[words] = NULL;
-			while(*s)
+			while (*s)
 			{
-				t[i] = malloc(word_length(s, c) + 1);
-				if (!t[i])
+				if (!(t[i] = malloc(word_length(s, c) + 1)))
 					return (NULL);
 				ft_strlcpy(t[i], s, word_length(s, c) + 1);
 				s = next_word(s, c);

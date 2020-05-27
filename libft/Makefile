@@ -6,14 +6,14 @@
 #    By: cbach <cbach@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/17 15:43:49 by cbach             #+#    #+#              #
-#    Updated: 2020/05/26 21:01:23 by cbach            ###   ########.fr        #
+#    Updated: 2020/05/27 14:44:48 by cbach            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	libft.a
 NAME_SO = libft.so
 HEAD =	libft.h
-FLAGS =
+FLAGS = -Wall -Wextra -Werror
 
 SRC =						\
 		ft_atoi.c			\

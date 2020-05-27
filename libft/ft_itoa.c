@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 19:57:24 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/27 14:18:37 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/27 14:48:16 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int		i_length(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char		*a;
 	char		*t;
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 		new_n = n;
 		t = a;
 		*(t + l + (n < 0 ? 1 : 0)) = '\0';
-		if(new_n < 0)
+		if (new_n < 0)
 		{
 			*t++ = '-';
 			new_n *= -1;

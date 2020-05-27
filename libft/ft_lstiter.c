@@ -6,13 +6,13 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 22:52:07 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/26 00:30:06 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/27 14:48:41 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
 	{

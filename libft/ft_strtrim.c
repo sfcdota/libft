@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 22:29:54 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/26 14:40:57 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/27 14:52:16 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int		length(char const *b, char const *e)
 	return (i);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	char	*b;
 	char	*e;
@@ -64,7 +64,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	b = begin(s1, set);
 	e = end(b, set);
 	l = length(b, e);
-	t = malloc (l + 1);
+	t = malloc(l + 1);
 	ft_strlcpy(t, b, l + 1);
 	return (t);
 }
