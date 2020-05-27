@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 17:18:38 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/24 18:43:15 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/27 14:38:08 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,15 @@ int		ft_atoi(const char *nptr)
 
 	i = 0;
 	multiplier = 1;
-	if (nptr != NULL)
+	while ((*nptr > 7 && *nptr < 14) || *nptr == 32)
+		nptr++;
+	if (*nptr == 45 || *nptr == 43)
 	{
-		while ((*nptr > 7 && *nptr < 14) || *nptr == 32)
-			nptr++;
-		if (*nptr == 45 || *nptr == 43)
-		{
-			if (*nptr == 45)
-				multiplier *= -1;
-			nptr++;
-		}
-		while (ft_isdigit(*nptr))
-			i = i * 10 + (*nptr++ - 48);
+		if (*nptr == 45)
+			multiplier *= -1;
+		nptr++;
 	}
+	while (ft_isdigit(*nptr))
+		i = i * 10 + (*nptr++ - 48);
 	return (i * multiplier);
 }
