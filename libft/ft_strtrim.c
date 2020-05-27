@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 22:29:54 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/27 14:52:16 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/27 23:47:20 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static int		is_in_set(char c, char const *set)
 {
-	while (set && *set)
+	while (*set)
 		if (c == *set++)
 			return (1);
 	return (0);
@@ -61,6 +61,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1)
 		return (NULL);
+	if (!set)
+		return ((char *)s1);
 	b = begin(s1, set);
 	e = end(b, set);
 	l = length(b, e);

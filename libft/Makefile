@@ -6,7 +6,7 @@
 #    By: cbach <cbach@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/17 15:43:49 by cbach             #+#    #+#              #
-#    Updated: 2020/05/27 14:44:48 by cbach            ###   ########.fr        #
+#    Updated: 2020/05/27 23:23:16 by cbach            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@ar -rcs $(NAME) $?
 
-bonus: $(NAME) $(OBJ_BONUS)
+bonus: $(OBJ_BONUS)
 	@ar -rs $(NAME) $?
 
 %.o : %.c $(HEAD)

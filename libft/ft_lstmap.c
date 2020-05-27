@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 23:00:48 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/27 14:48:59 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/27 19:18:04 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void (*del)(void *))
 				n->next = ft_lstnew(f(lst->content));
 				if (!n->next)
 				{
-					ft_lstclear(&n, del);
+					ft_lstclear(&first, del);
 					return (NULL);
 				}
 				n = n->next;
