@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 21:21:55 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/28 21:00:51 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/28 21:04:33 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	l = ft_strlen(s);
 	if (start >= l)
 	{
-		sub = malloc (1);
+		sub = malloc(1);
 		if (sub)
 			*sub = '\0';
 		return (sub);
