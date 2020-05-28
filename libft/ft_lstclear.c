@@ -6,11 +6,12 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 22:42:33 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/26 00:51:16 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/28 20:36:11 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 void	ft_lstclear(t_list **lst, void (*del)(void
 *))
