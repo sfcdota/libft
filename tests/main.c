@@ -293,29 +293,31 @@ int main()
 	// }
 	//printf("%s\n", ft_substr("adfhs", 4, 5));
 
-	t_list **t = malloc(10 * sizeof(t_list *));
-	printf("asdf\n");
-	ft_lstadd_back(t, ft_lstnew("asdf"));
-	printf("asdf2\n");
-	ft_lstadd_back(t, ft_lstnew("asdf2"));
-	printf("asdf3\n");
-	ft_lstadd_front(t, ft_lstnew("asdf2"));
-	printf("asdf4\n");
-	int i = 0;
-	while (i < ft_lstsize(*t))
-	{
-		printf("%s\n", (char *)((*t)->content));
-		*t = (*t)->next;
-	}
-	ft_lstclear(t, (void *)content_clear);
-	i = 0;
-	printf("asfasdfasdfasdfdf5\nsize = %p\n", *t);
-	while (t && i < ft_lstsize(*t))
-	{
-		printf("%s\n", (char *)((*t)->content));
-		*t = (*t)->next;
-	}
-	printf("asfasdfasdfasdfdf5\n");
+	// t_list **t = malloc(10 * sizeof(t_list *));
+	// printf("asdf\n");
+	// ft_lstadd_back(t, ft_lstnew("asdf"));
+	// printf("asdf2\n");
+	// ft_lstadd_back(t, ft_lstnew("asdf2"));
+	// printf("asdf3\n");
+	// ft_lstadd_front(t, ft_lstnew("asdf2"));
+	// printf("asdf4\n");
+	// int i = 0;
+	// while (i < ft_lstsize(*t))
+	// {
+	// 	printf("%s\n", (char *)((*t)->content));
+	// 	*t = (*t)->next;
+	// }
+	// ft_lstclear(t, (void *)content_clear);
+	// i = 0;
+	// printf("asfasdfasdfasdfdf5\nsize = %p\n", *t);
+	// while (t && i < ft_lstsize(*t))
+	// {
+	// 	printf("%s\n", (char *)((*t)->content));
+	// 	*t = (*t)->next;
+	// }
+	// printf("asfasdfasdfasdfdf5\n");
+
+	printf("%s\n", ft_substr("", 5, 0));
 	return (0);
 }
 
