@@ -284,13 +284,14 @@ int main()
 	//printf("%p\n", &c);
 	//printf("%p\n", ft_substr("asdf", 6, 7));
 	//printf("%s\n", ft_strtrim(NULL, NULL));
-	// char **t = ft_split("", 'c');
-	// int i = 0;
-	// while (t[i])
-	// {
-	// 	printf("%s\n", t[i]);
-	// 	i++;
-	// }
+	 char **t = ft_split("", 'c');
+	 int i = 0;
+	 while (t[i])
+	 {
+	 	printf("%s\n", t[i]);
+	 	i++;
+	}
+	printf("%p\n", t);
 	//printf("%s\n", ft_substr("adfhs", 4, 5));
 
 	// t_list **t = malloc(10 * sizeof(t_list *));
@@ -317,7 +318,9 @@ int main()
 	// }
 	// printf("asfasdfasdfasdfdf5\n");
 
-	printf("%s\n", ft_substr("", 5, 0));
+	//printf("%s\n", ft_substr("", 5, 0));
+
+	//printf("%s\n",ft_substr("test", 10, 1));
 	return (0);
 }
 

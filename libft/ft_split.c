@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 19:14:31 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/27 23:28:43 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/28 21:20:46 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,12 @@ void			*clear(char **t, int i)
 	while (i)
 	{
 		free(t[i]);
+		t[i] = NULL;
 		i--;
 	}
 	free(t);
-	return (NULL);
+	t = NULL;
+	return (t);
 }
 
 char			**ft_split(char const *s, char c)
