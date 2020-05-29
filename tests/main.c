@@ -278,7 +278,7 @@ int main()
 	//memset_unit1();
 	//memset_unit2();
 	//memset_unit3();
-	ft_calloc(__SIZE_MAX__, __SIZE_MAX__);
+	//ft_calloc(__SIZE_MAX__, __SIZE_MAX__);
 
 	//char *c = ft_substr("asdf", 6, 7);
 	//printf("%p\n", &c);
@@ -320,6 +320,9 @@ int main()
 	//printf("%s\n", ft_substr("", 5, 0));
 
 	//printf("%s\n",ft_substr("test", 10, 1));
+	//void *t = calloc(__SIZE_MAX__, (size_t)2);
+	void *t = ft_calloc(__SIZE_MAX__, (size_t)2);
+	free(t);
 	return (0);
 }
 
