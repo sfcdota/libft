@@ -278,20 +278,19 @@ int main()
 	//memset_unit1();
 	//memset_unit2();
 	//memset_unit3();
-	//ft_calloc(__SIZE_MAX__, __SIZE_MAX__);
+	ft_calloc(__SIZE_MAX__, __SIZE_MAX__);
 
 	//char *c = ft_substr("asdf", 6, 7);
 	//printf("%p\n", &c);
 	//printf("%p\n", ft_substr("asdf", 6, 7));
 	//printf("%s\n", ft_strtrim(NULL, NULL));
-	 char **t = ft_split("", 'c');
-	 int i = 0;
-	 while (t[i])
-	 {
-	 	printf("%s\n", t[i]);
-	 	i++;
-	}
-	printf("%p\n", t);
+	// char **t = ft_split("", 'c');
+	// int i = 0;
+	// while (t[i])
+	// {
+	// 	printf("%s\n", t[i]);
+	// 	i++;
+	// }
 	//printf("%s\n", ft_substr("adfhs", 4, 5));
 
 	// t_list **t = malloc(10 * sizeof(t_list *));

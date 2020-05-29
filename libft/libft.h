@@ -6,13 +6,13 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 02:06:30 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/28 21:09:36 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/29 23:52:45 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stddef.h>
+# include <stdlib.h>
 
 typedef struct		s_list
 {

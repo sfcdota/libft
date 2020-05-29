@@ -6,11 +6,10 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 19:57:24 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/27 19:18:24 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/29 23:52:45 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int		i_length(int n)

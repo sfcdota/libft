@@ -6,12 +6,11 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 19:14:31 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/28 21:20:46 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/29 23:52:45 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int		word_length(char const *s, char c)
 {

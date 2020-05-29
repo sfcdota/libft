@@ -6,12 +6,11 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 23:00:48 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/28 18:58:55 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/29 23:52:45 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
 void (*del)(void *))

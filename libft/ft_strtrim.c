@@ -6,12 +6,11 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 22:29:54 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/27 23:47:20 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/29 23:59:16 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int		is_in_set(char c, char const *set)
 {
@@ -67,6 +66,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	e = end(b, set);
 	l = length(b, e);
 	t = malloc(l + 1);
-	ft_strlcpy(t, b, l + 1);
+	if (t)
+		ft_strlcpy(t, b, l + 1);
 	return (t);
 }
