@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 19:14:31 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/29 23:52:45 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/30 01:05:29 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int		words_count(char const *s, char c)
 
 void			*clear(char **t, int i)
 {
-	while (i)
+	while (i >= 0)
 	{
 		free(t[i]);
 		t[i] = NULL;
