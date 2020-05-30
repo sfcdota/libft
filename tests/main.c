@@ -335,9 +335,11 @@ int main()
 	// printf("%d\n", atoi(fdsa));
 	// printf("%d\n", ft_atoi(asdf));
 	// printf("%d\n", ft_atoi(fdsa));
-	void *t = NULL;
-	void *s = NULL;
-	memcpy(t, s, 0);
+	// void *t = NULL;
+	// void *s = NULL;
+	// memcpy(t, s,1);
+	// ft_memcpy(t, s,1);
+	printf("%p\n", *(malloc (0)));
 	return (0);
 }
 
