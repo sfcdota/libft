@@ -3,10 +3,12 @@
 #include <stdlib.h>
 #include "libft.h"
 #include <unistd.h>
+#include <strings.h>
+#include <bsd/string.h>
+
 #define TEST_SUCCESS "SUCCESS\n"
 #define TEST_FAILED "FAILED\n"
 #define exit(x) printf(x);
-
 
 
 // char	mapi(unsigned int i, char c)
@@ -321,8 +323,12 @@ int main()
 
 	//printf("%s\n",ft_substr("test", 10, 1));
 	//void *t = calloc(__SIZE_MAX__, (size_t)2);
-	void *t = ft_calloc(__SIZE_MAX__, (size_t)2);
-	free(t);
+	//void *t = ft_calloc(__SIZE_MAX__, (size_t)2);
+	//free(t);
+	char *t = NULL;
+	printf("%s\n%p\n", strrchr(t,'c'), t);
+	//printf("%s\n%p\n", ft_strrchr(t,'c'), t);
+
 	return (0);
 }
 

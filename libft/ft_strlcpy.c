@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 15:43:19 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/26 14:33:35 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/30 02:51:05 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t c;
 
+	if (!size && src)
+		return (0);
 	c = 0;
 	if (size && dst && src)
 	{
