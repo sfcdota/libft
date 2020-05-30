@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 17:18:38 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/28 21:06:43 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/30 20:41:27 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ int		ft_atoi(const char *nptr)
 		nptr++;
 	}
 	while (ft_isdigit(*nptr))
+	{
+		if (i > 922337203685477580 && *nptr > 54)
+			if (multiplier == 1)
+				return (-1);
+			else
+				if (multiplier == -1 && *nptr > 55)
+					return (0);
 		i = i * 10 + (*nptr++ - 48);
+	}
 	return (i * multiplier);
 }
