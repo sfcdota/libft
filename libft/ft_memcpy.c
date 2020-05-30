@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 18:12:35 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/30 02:32:45 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/30 20:01:05 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,17 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	return (ft_memmove(dest, src, n));
+	char	*d;
+	char	*s;
+	size_t	i;
+
+	if (n)
+	{
+		i = 0;
+		d = (char *)dest;
+		s = (char *)src;
+		while (i++ < n)
+			*(d++) = *(s++);
+	}
+	return (dest);
 }

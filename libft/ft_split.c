@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 19:14:31 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/30 01:05:29 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/30 20:01:45 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int		words_count(char const *s, char c)
 	return (i);
 }
 
-void			*clear(char **t, int i)
+void			*ft_clear(char **t, int i)
 {
 	while (i >= 0)
 	{
@@ -77,7 +77,7 @@ char			**ft_split(char const *s, char c)
 	while (*s)
 	{
 		if (!(t[i] = malloc(word_length(s, c) + 1)))
-			return (clear(t, i));
+			return (ft_clear(t, i));
 		ft_strlcpy(t[i], s, word_length(s, c) + 1);
 		s = next_word(s, c);
 		i++;
