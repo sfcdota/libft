@@ -6,7 +6,7 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 02:06:26 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/30 02:29:18 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/30 21:40:58 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*s;
 	size_t	i;
 
-	if (n)
+	if (n && (dest || src))
 	{
 		i = 0;
 		d = (char *)dest;

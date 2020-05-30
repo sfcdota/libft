@@ -329,12 +329,15 @@ int main()
 	// char *t = malloc(2);
 	// printf("%lu\n%p\n", strlcat(d,t,0), d);
 	// printf("%lu\n%p\n", ft_strlcat(d,t,0), d);
-	char asdf[40] = "9999999999999999999999999999999999999999";
-	char fdsa[40] = "-999999999999999999999999999999999999999";
-	printf("%d\n", atoi(asdf));
-	printf("%d\n", atoi(fdsa));
-	printf("%d\n", ft_atoi(asdf));
-	printf("%d\n", ft_atoi(fdsa));
+	// char asdf[40] = "9999999999999999999999999999999999999999";
+	// char fdsa[40] = "-999999999999999999999999999999999999999";
+	// printf("%d\n", atoi(asdf));
+	// printf("%d\n", atoi(fdsa));
+	// printf("%d\n", ft_atoi(asdf));
+	// printf("%d\n", ft_atoi(fdsa));
+	void *t = NULL;
+	void *s = NULL;
+	memcpy(t, s, 0);
 	return (0);
 }
 
