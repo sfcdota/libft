@@ -325,9 +325,10 @@ int main()
 	//void *t = calloc(__SIZE_MAX__, (size_t)2);
 	//void *t = ft_calloc(__SIZE_MAX__, (size_t)2);
 	//free(t);
-	char *t = NULL;
-	printf("%s\n%p\n", strrchr(t,'c'), t);
-	//printf("%s\n%p\n", ft_strrchr(t,'c'), t);
+	char *d = NULL;
+	char *t = malloc(2);
+	printf("%lu\n%p\n", strlcat(d,t,0), d);
+	printf("%lu\n%p\n", ft_strlcat(d,t,0), d);
 
 	return (0);
 }
