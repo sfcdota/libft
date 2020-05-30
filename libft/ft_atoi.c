@@ -6,13 +6,13 @@
 /*   By: cbach <cbach@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/24 17:18:38 by cbach             #+#    #+#             */
-/*   Updated: 2020/05/30 21:12:31 by cbach            ###   ########.fr       */
+/*   Updated: 2020/05/30 22:20:45 by cbach            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int is_over(long long int i, int multiplier, int current)
+static int	is_over(long long int i, int multiplier, int current)
 {
 	if ((i == 922337203685477580 && current > 54 && multiplier == 1)
 	|| (i == 922337203685477580 && current > 55 && multiplier == -1)
@@ -22,7 +22,7 @@ static int is_over(long long int i, int multiplier, int current)
 		return (0);
 }
 
-int		ft_atoi(const char *nptr)
+int			ft_atoi(const char *nptr)
 {
 	long long int	i;
 	int				multiplier;
